@@ -1,5 +1,7 @@
+# ChatGPT key: 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
 move = 5
 ove = 0
+ddd = 0
 ao =" "
 co =" "
 eo =" "
@@ -97,6 +99,7 @@ def end():
   global q
   global r
   global s
+  global ddd
   a =" "
   c =" "
   e =" "
@@ -117,6 +120,7 @@ def end():
   p ="     | |      / _____ \   | |   | |___   "
   r ="     |_|     /_/     \_\  |_|   |_____|  "
   t ="                                         "
+  ddd = 1
 def death():
   global a
   global b
@@ -157,7 +161,7 @@ def death():
     end()
   if so == 1 and s =="o":
     end()
-    
+
 def move_bird():
   global move
   global ove
@@ -218,10 +222,13 @@ def move_bird():
     s = " "
   if (move < 0) or (move > 9):
     end()
-    
-while True:
-  printscreen()
-  death()
-  move_bird()
 
+def play():
+  while True:
+    death()
+    move_bird()
+    printscreen()
+    if ddd == 1:
+      break
+play()
 # test git integration
